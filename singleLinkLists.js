@@ -15,6 +15,8 @@ class SinglyLinkedLists{
         this.length = 0;
         this.tail = null;
     }
+    
+    //adds a node at the end of the list
     push(val){
         let newNode = new Node(val) 
         if(!this.head){
@@ -27,6 +29,8 @@ class SinglyLinkedLists{
         this.length++
         return this 
     }
+    
+    //removes a node from the end of the list
     pop(){
         if(!this.head) return undefined
         let current = this.head;
@@ -44,6 +48,8 @@ class SinglyLinkedLists{
         }
         return current;
     }
+    
+    //removes a node from the beginning of the list
     shift(){
         if(!this.head) return undefined
         let currentHead = this.head;
@@ -54,6 +60,8 @@ class SinglyLinkedLists{
         }
         return currentHead;
     }
+    
+    //adds a node to beginning of the list
     unshift(val){
         let newHead = new Node(val)
         if(!this.head){
@@ -66,6 +74,8 @@ class SinglyLinkedLists{
         }
         return this
     }
+    
+    //accesing a node in the list by the node position(by the index)
     get(idx){
         if(idx <= 0 || idx >= this.length)    return null
         let counter = 0;
@@ -76,6 +86,8 @@ class SinglyLinkedLists{
         }
     return current
     }
+    
+    //replace the value of a node from the list
     set(index, val){
         let foundNode = this.get(index)
         if (foundNode){
@@ -84,6 +96,8 @@ class SinglyLinkedLists{
         }
             return false;
     }
+    
+    //adding a node in the list by a certain position
     insert(index, val){
         if(index < 0 || index > this.length) return false
         if (index === this.length) return !!this.push(val)
@@ -96,6 +110,8 @@ class SinglyLinkedLists{
         this.length++
         return true;
     }
+    
+    //removes a node form the list by a certain position
     remove(index){
         if(index < 0 || index >= this.length) return undefined
         if(index == this.length - 1) return this.pop() 
@@ -106,6 +122,8 @@ class SinglyLinkedLists{
         this.length--
         return removed;
     }
+    
+    //puts nodes in reverse order
     reverse(){
         let node = this.head;
         this.head = this.tail;
