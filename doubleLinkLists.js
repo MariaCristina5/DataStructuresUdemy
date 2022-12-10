@@ -12,6 +12,8 @@ class DoublyLinkedList{
         this.tail = null;
         this.length = 0; 
     }
+    
+    //adds a node at the end of the list
     push(val){
         let newNode = new Node(val)
         if(!this.head){
@@ -26,6 +28,8 @@ class DoublyLinkedList{
         this.length++
         return this
     }
+    
+    //removes a node from the end of the list
     pop(){
         if(!this.head) return undefined
         let current = this.tail;
@@ -39,6 +43,8 @@ class DoublyLinkedList{
         this.length--;
         return current;
     }
+    
+    //removes a node from the beginning of the list
     shift(){
         if(!this.head) return undefined
         let oldHead = this.head
@@ -53,6 +59,8 @@ class DoublyLinkedList{
         this.length--
         return oldHead
     }
+    
+    //adds a node to beginning of the list
     unshift(val){
         let newNode = new Node(val)
         if(!this.head){
@@ -66,6 +74,8 @@ class DoublyLinkedList{
         this.length++;
         return this;
     }
+    
+    //accesing a node in the list by the node position(by the index)
     get(index){
         if(index < 0 || index >= this.length) return null;
             let counter = 0;
@@ -85,6 +95,8 @@ class DoublyLinkedList{
         }
         return current;
     }
+    
+    //replace the value of a node from the list
     set(index, val){
         let foundNode = this.get(index)
         if(foundNode !== null ){
@@ -93,6 +105,8 @@ class DoublyLinkedList{
         }
         return false;
     }
+    
+     //adding a node in the list by a certain position
     insert(index, val){
         if(index < 0 || index > this.length) return false;
         if(index === 0) return !!this.unshift(val);
@@ -108,6 +122,8 @@ class DoublyLinkedList{
         this.length++;
         return true;
     }
+    
+     //removes a node form the list by a certain position
     remove(index){
         if(index < 0 || index >= this.length) return undefined
         if(index === 0) return this.shift()
@@ -120,6 +136,8 @@ class DoublyLinkedList{
         this.length--;
         return removedNode;
     }
+    
+    //puts nodes in reverse order
     reverse(){
         let node = this.head;
         this.head = this.tail;
