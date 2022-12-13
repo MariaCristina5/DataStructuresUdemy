@@ -11,12 +11,12 @@ class MaxBinaryHeap{
         const element = this.values[index]
         while(index > 0){
             let parentIndex = Math.floor((index-1)/2);
-            let parent = this.values[parentIndex]
-            if(element > parent){
+            let parent = this.values[parentIndex];
+            if(element > parent) break;
                 this.values[parentIndex] = element;
                 this.values[index] = parent;
                 index = parentIndex; 
-            }
+            
         }
     }
     extractMax(){
